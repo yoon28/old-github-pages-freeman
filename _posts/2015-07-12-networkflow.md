@@ -2,7 +2,7 @@
 published: true
 title: Minimum cost flow
 layout: post
-author: Yu 
+author: Kwangjin Yoon
 category: Algorithms
 tags: 
 - Min cost flow
