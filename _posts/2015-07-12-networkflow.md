@@ -3,14 +3,14 @@ published: true
 title: Minimum cost flow
 layout: post
 author: Yu 
-category: news
-tags:
-- version
+category: Algorithms
+tags: 
+- Min cost flow
 ---
 
 ## Minimum cost flow problem
 Minimum cost flow(MCF) 문제는 주어진 그래프와 제약 조건을 만족하는 최소 비용의 flow를 구하는 문제이다.
-
+<!-- more -->
 <br>
 
 ### MCF의 그래프 

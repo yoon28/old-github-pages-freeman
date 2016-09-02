@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<meta property="og:title" content="Minimum cost flow">
+<title>Minimum cost flow</title>
+<meta property="og:description" content="Minimum cost flow problemMinimum cost flow(MCF) 문제는 주어진 그래프와 제약 조건을 만족하는 최소 비용의 flow를 구하는 문제이다.">
+<meta property="og:url" content="/algorithms/2015/07/12/networkflow.html">
+<meta property="og:site_name" content="Kwangjin Yoon">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:title" content="Minimum cost flow">
+<meta name="twitter:description" content="Minimum cost flow problemMinimum cost flow(MCF) 문제는 주어진 그래프와 제약 조건을 만족하는 최소 비용의 flow를 구하는 문제이다.">
+<meta name="twitter:url" content="/algorithms/2015/07/12/networkflow.html">
+
+<meta name="keywords" content="Computer Science, Machine Learning, Computer Vision, Pattern Recognition">
+
+<link rel="icon" href="/images/github.png">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="/algorithms/2015/07/12/networkflow.html">
+<link rel="alternate" type="application/atom+xml" title="Kwangjin Yoon" href="/feed.xml" />
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script language="Javascript" type="text/javascript">
+function search_google()
+{
+  var query = document.getElementById("google-search").value;
+  window.open("http://google.com/search?q=" + query
+      + "%20site:" + "");
+}
+</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+<script type='text/javascript'>
+var blocklink = ['http://humanorightswatch.org','http://o-o-6-o-o.com','http://darodar.com','http://blackhatworth.com','http://hulfingtonpost.com','http://bestwebsitesawards.com','http://darodar.com','http://buttons-for-website.com','http://ilovevitaly.co','http://semalt.com','http://priceg.com','http://simple-share-buttons.com','http://googlsucks.com','http://4webmasters.org','http://aliexpress.com','http://addons.mozilla.org/en-US/firefox/addon/ilovevitaly/','http://free-share-buttons.com','http://buttons-for-your-website.com','http://theguardlan.com','http://buy-cheap-online.info','http://best-seo-offer.com','http://4webmasters.org','http://trafficmonetize.org','http://howtostopreferralspam.eu','http://ilovevitaly.com','http://sanjosestartups.com','http://free-social-buttons.com','http://best-seo-offer.com','http://guardlink.org','http://www.event-tracking.com','http://www3.free-social-buttons.com','http://www1.free-social-buttons.com','http://www2.free-social-buttons.com','http://websites-reviews.com','http://floating-share-buttons.com','http://satellite.maps.ilovevitaly.com','http://free-social-buttons.com','http://www.event-tracking.com','http://erot.co'];
+for (var b = blocklink.length; b--;) {
+  if (document.referrer.match(blocklink[b]))
+    window.location = "http://www.google.com";
+}
+</script>
+
+
+
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+  <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/">Kwangjin Yoon</a></h1>
+    <h3 class="site-meta">Dream big, Work hard, Stay humble.</h3>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+        
+        <a class="page-link" href="/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/archives/">Archives</a>
+        
+        
+        
+        <a class="page-link" href="/categories/">Categories</a>
+        
+        
+        
+        <a class="page-link" href="/tags/">Tags</a>
+        
+        
+        
+        <a class="page-link" href="/guestbook/">Guestbook</a>
+        
+        
+        
+        <a class="page-link" href="/feed.xml">Subscribe</a>
+        
+        
+        
+        
+        
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    
+
+  <div class="page-content col-sm-8">
+    <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 itemprop="name" class="post-title">Minimum cost flow</h1>
+    <meta itemprop="keywords" content="Min cost flow" />
+    <p class="post-meta">
+    Posted in
+    
+    <a href="/categories/#Algorithms">Algorithms</a>
+     
+    
+    and tagged
+    
+    <a href="/tags/#Min cost flow" title="Min cost flow">Min cost flow</a>
+    
+    
+    <time itemprop="datePublished" datetime="2015-07-12">
+    on Jul 12, 2015
+    </time>
+    </p>
+  </header>
+
+  <article class="post-content" itemprop="articleBody">
+    <h2 id="minimum-cost-flow-problem">Minimum cost flow problem</h2>
+<p>Minimum cost flow(MCF) 문제는 주어진 그래프와 제약 조건을 만족하는 최소 비용의 flow를 구하는 문제이다.
+<!-- more -->
+<br /></p>
+
+<h3 id="mcf-">MCF의 그래프</h3>
+<p>MCF에서 그래프는 노드(Node)와 방향성이 있는 간선(Edge)으로 이루어져있다. 즉, 그래프 <script type="math/tex">G=(V,E)</script>의 모든 간선 <script type="math/tex">(i,j)\in E</script>는 노드 <script type="math/tex">i</script>에서 노드<script type="math/tex">j</script>로 흐르는 방향의 간선이다. 이때 <script type="math/tex">i,j \in V</script>이다. 또 모든 간선들은 <strong>capacity</strong> <script type="math/tex">u_{ij}</script>와 <strong>cost</strong> <script type="math/tex">c_{ij}</script>를 갖는다. <script type="math/tex">u_{ij}</script>는 간선 <script type="math/tex">(i,j)</script>에 흐를수 있는 <strong>최대 flow</strong>를 나타내며, <script type="math/tex">c_{ij}</script>는 간선 <script type="math/tex">(i,j)</script>를 흐르는 <strong>하나의 flow당 소요되는 cost</strong>를 말한다. 그리고 모든 노드 <script type="math/tex">i \in V</script>는 <strong>supply</strong> <script type="math/tex">b_{i}</script>를 갖는다. <script type="math/tex">b_{i}</script>가 <script type="math/tex">0</script>보다 클 경우 노드 <script type="math/tex">i</script>를 <strong>supply node</strong>라 부르고, <script type="math/tex">% <![CDATA[
+b_{i}<0 %]]></script>이면 <strong>demand node</strong>라 부른다. 만약 <script type="math/tex">b_{i}=0</script>이면 <strong>transshipment node</strong>라 부른다. 아래 사진은 MCF 그래프의 한 예이다. 6개의 노드와 7개의 간선으로 이루어진 것을 확인 할 수 있다. 예제로부터 간선 <script type="math/tex">(1,3)</script>은 3의 <strong>capacity</strong>와 4의 <strong>cost</strong>를 가지며 노드 1은 <script type="math/tex">b_{1}</script> 값이 5이므로 <strong>supply node</strong>이다.</p>
+
+<p class="center"><img src="http://community.topcoder.com/i/education/minimumCostFlow/Figure_1_1.png" alt="graph example" title="graph example" /></p>
+
+<p class="center"><sub><em>위 그림은 <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-one-key-concepts/">topcoder</a> 에서 발췌한 것 입니다.</em></sub></p>
+
+<p><br /></p>
+
+<h3 id="mcf--">MCF의 제약 조건</h3>
+<p>간선 <script type="math/tex">(i,j)\in E</script>를 흐르는 flow를 <script type="math/tex">x_{ij}</script>라고 하자. 그러면 MCF 문제는 다음의 값을 최소화하는 최적화 문제이다.</p>
+
+<script type="math/tex; mode=display">\min_{x_{ij}} \sum_{(i,j)\in E} c_{ij}x_{ij}</script>
+
+<p>더불어 다음의 두가지 제약 조건을 만족하여야 한다.</p>
+
+<script type="math/tex; mode=display">\sum_{(i,j)\in E}x_{ij} - \sum_{(j,i)\in E}x_{ji} = b_{i} \text{, for all } i \in V</script>
+
+<script type="math/tex; mode=display">0 \leq x_{ij} \leq u_{ij} \text{, for all } (i,j)\in E</script>
+
+<p>첫 번째 제약 조건을 <strong>flow conservation constraint</strong>라고 부른다. 이 제약 조건은 어떤 노드 <script type="math/tex">i</script>에서 <strong>나가는 flow의 총합</strong>과 <strong>들어오는 flow의 총합</strong>의 차이가 <script type="math/tex">b_{i}</script>와 같아야 함을 말한다. 두 번째 제약 조건은 간선 <script type="math/tex">(i,j)</script>를 흐르는 flow <script type="math/tex">x_{ij}</script>의 크기에 대한 제약 조건인데 이 크기가 0보다 크거나 같고 <strong>capacity</strong> <script type="math/tex">u_{ij}</script>보다 작거나 같아야함을 말한다.</p>
+
+<p><em>작성 중..</em></p>
+
+  </article>
+  <hr />
+</div>
+
+
+<section class="pager">
+  <ul>
+    
+    <li class="disabled"><a>&larr; Older</a></li>
+    
+    
+    <li class="next"><a href="/deep%20learning/2016/03/28/udacity-lec03.html" title="Udacity lecture 03">Newer &rarr;</a></li>
+    
+  </ul>
+</section>
+
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    if (e.target.nodeName.toUpperCase() != 'BODY') return;
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = '/deep%20learning/2016/03/28/udacity-lec03.html';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+  var disqus_developer = 1;
+
+var disqus_shortname ='yoon28';
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+    <section class="pager">
+  
+  
+</section>
+
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    if (e.target.nodeName.toUpperCase() != 'BODY') return;
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+  </div>
+  <div class="col-sm-2">
+<div class="sidebar-module about">
+  <h4>About Me</h4>
+  <img title="Kwangjin Yoon, 윤광진" src="/images/space.jpg" alt="Kwangjin Yoon, 윤광진"/>
+  <span>Hello everyone!. My name is Kwangjin Yoon[윤광진] from South Korea. Thank you!</span>
+  <br />
+
+  
+
+</div>
+
+<div class="sidebar-module">
+  <h4>Site Search</h4>
+  <form onsubmit="search_google()" >
+    <input type="text" id="google-search" placeholder="Google search" />
+    <input type="submit" name="sa" value="Go" />
+  </form>
+</div>
+
+
+<div class="sidebar-module"> <!-- sidebar-module-inset">-->
+  <h4>Copyright Notice</h4>
+
+  
+
+  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+    <img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png">
+  </a>
+  <br />
+  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>
+
+  
+
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Recent Posts</h4>
+  
+  <li>
+  <a href="/deep%20learning/2016/03/28/udacity-lec03.html" title="Udacity lecture 03" rel="bookmark">Udacity lecture 03</a>
+  </li>
+  
+  <li>
+  <a href="/algorithms/2015/07/12/networkflow.html" title="Minimum cost flow" rel="bookmark">Minimum cost flow</a>
+  </li>
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Categories</h4>
+  
+  <li><a href="/categories/#Algorithms" title="Algorithms" rel="1">Algorithms (1)</a></li>
+  
+  <li><a href="/categories/#Deep learning" title="Deep learning" rel="1">Deep learning (1)</a></li>
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Tags</h4>
+  
+    <a href="/tags/#Min cost flow" title="Min cost flow" rel="1">Min cost flow</a> &nbsp;
+  
+    <a href="/tags/#Deep learning" title="Deep learning" rel="1">Deep learning</a> &nbsp;
+  
+    <a href="/tags/#Tensorflow" title="Tensorflow" rel="1">Tensorflow</a> &nbsp;
+  
+    <a href="/tags/#Udacity lecture" title="Udacity lecture" rel="1">Udacity lecture</a> &nbsp;
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Blogroll</h4>
+  
+  <li><a href="http://yulijia.net/freshman" title="Another Jekyll blog theme">Freshman</a></li>
+  
+  <li><a href="http://yulijia.net/" title="Lijia Yu's website">author's website</a></li>
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Archives</h4>
+
+  
+  
+  
+  
+  
+  <li id="2016" > <a href="/archives/#2016">2016</a></li>
+  
+  
+  
+  
+  
+  
+  <li id="2015" > <a href="/archives/#2015">2015</a></li>
+  
+  
+
+</div>
+
+
+</div>
+
+
+
+  
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/">Kwangjin Yoon</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
+  on 
+  
+  <a href="https://github.com/">Github</a>
+  
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="http://yulijia.net">Lijia Yu</a>  
+
+
+  <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+    <a title="Back To Top"><img src="/images/topbutton.png"/></a>
+  </div>
+
+  <script src="/js/jquery-1.9.1.min.js"></script>
+  <script src="/js/totop.js"></script>  
+
+
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>
