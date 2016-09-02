@@ -16,7 +16,7 @@ twitter_username: #yulijia
 github_username:  yoon28
 disqus_shortname: yoon28
 favicon:     "/images/github.png"
-aboutme: Hello everyone! My name is Kwangjin Yoon[윤광진] from South Korea. Thank you! # these are shown on aboutme-sidebar.
+aboutme: Hello!<br>My name is Kwangjin Yoon[윤광진] from South Korea. # these are shown on aboutme-sidebar.
 aboutme_photo: /images/space.jpg # your photo.
 google_analytics_key: # UA-57979084-1 # put YOUR key here to enable tracking! (blank to disable)
 
