@@ -5,8 +5,8 @@
     <description>This is a github page.</description>
     <link>/</link>
     <atom:link href="/zfeed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Sep 2016 17:02:59 +0900</pubDate>
-    <lastBuildDate>Fri, 02 Sep 2016 17:02:59 +0900</lastBuildDate>
+    <pubDate>Fri, 02 Sep 2016 17:10:23 +0900</pubDate>
+    <lastBuildDate>Fri, 02 Sep 2016 17:10:23 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -113,7 +113,7 @@ b_{i}&lt;0 %]]&gt;&lt;/script&gt;이면 &lt;strong&gt;demand node&lt;/strong&gt;
 
 &lt;p&gt;첫 번째 제약 조건을 &lt;strong&gt;flow conservation constraint&lt;/strong&gt;라고 부른다. 이 제약 조건은 어떤 노드 &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;에서 &lt;strong&gt;나가는 flow의 총합&lt;/strong&gt;과 &lt;strong&gt;들어오는 flow의 총합&lt;/strong&gt;의 차이가 &lt;script type=&quot;math/tex&quot;&gt;b_{i}&lt;/script&gt;와 같아야 함을 말한다. 두 번째 제약 조건은 간선 &lt;script type=&quot;math/tex&quot;&gt;(i,j)&lt;/script&gt;를 흐르는 flow &lt;script type=&quot;math/tex&quot;&gt;x_{ij}&lt;/script&gt;의 크기에 대한 제약 조건인데 이 크기가 0보다 크거나 같고 &lt;strong&gt;capacity&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;u_{ij}&lt;/script&gt;보다 작거나 같아야함을 말한다.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;작성 중..&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;작성 중…&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 12 Jul 2015 00:00:00 +0900</pubDate>
         <link>/algorithms/2015/07/12/networkflow.html</link>
