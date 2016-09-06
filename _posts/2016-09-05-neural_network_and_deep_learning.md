@@ -13,10 +13,12 @@ tags:
 
 <q>이 글은 Michael Nielsen의 [Neural Networks and Deel Learning](http://neuralnetworksanddeeplearning.com/chap1.html) 강좌를 번역한 것 입니다.</q>
 
+
+## Chapter 1: Neural net을 이용한 숫자 손글씨Handwritten digits 인식
+
 * Table of Contents
 {:toc}
 
-## [Chapter 1] Neural net을 이용한 숫자 손글씨Handwritten digits 인식
 
 사람의 시각 시스템은 세상에서 우리가 이해하지 못하는 것들 중에 하나다. 다음 사진 속의 손으로 쓴 일련의 숫자들을 보아 보자.
 
