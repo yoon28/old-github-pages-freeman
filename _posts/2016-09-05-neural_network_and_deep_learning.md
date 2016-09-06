@@ -17,7 +17,6 @@ tags:
 {:toc}
 
 ## Chapter 1
-
 ### Neural net을 이용한 손글씨 숫자Handwritten digits 인식
 
 사람의 시각 시스템은 세상에서 우리가 이해하지 못하는 것들 중에 하나다. 다음 사진 속의 손으로 쓴 일련의 숫자들을 보아 보자.
