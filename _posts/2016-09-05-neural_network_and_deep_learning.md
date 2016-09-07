@@ -11,7 +11,7 @@ tags:
 - 번역
 ---
 
-<q>이 글은 Michael Nielsen의 책 [Neural Networks and Deel Learning](http://neuralnetworksanddeeplearning.com/chap1.html)를 번역한 것 입니다.</q>
+<q>이 글은 Michael Nielsen의 책 [Neural Networks and Deel Learning](http://neuralnetworksanddeeplearning.com/chap1.html)를 번역한 것 입니다. **현재 번역중에 있습니다.**</q>
 
 
 ## Chapter 1: Neural net을 이용한 손글씨 숫자<sup>Handwritten digits</sup> 인식
