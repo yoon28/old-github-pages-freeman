@@ -50,14 +50,14 @@ tags:
 또한, 딥러닝<sup>Deep Learning</sup>과 같은 진보된 기술 개발에도 사용할 것이다. 이 책 전반을 통해 손글씨 숫자 인식 예제를 사용할 것이다.
 그리고 책 후반에는 뉴럴 네트워크를 컴퓨터 비젼<sup>Computer Vision</sup>이나 음성 인식, NLP<sup>Natural Language Processing</sup> 등 다른 분야에 적용하는 방법에 대해서도 이야기 하겠다.  
 
-물론 정말 손글씨 숫자를 인식하는 프로그램만 개발하는 것이 이 챕터의 목적이었다면 이 챕터는 당연히 더 짧았을 것이다! 하지만 여기서는 뉴럴 네트워크 개발에 필요한 여러 중요한 아이디어<sup>Key ideas</sup>와 두 개의 중요한 인공 뉴런<sup>Artificial neuron</sup>(퍼셉트론<sup>Perceptron</sup>과 시그모이드 뉴런<sup>Sigmoid neuron</sup>) 그리고 통계적 그라디언트 디센트<sup>Stochastic Gradient Descent</sup>라 불리는 학습 알고리즘<sup>Learning Algorithm</sup>을 다를 것이다.  
+물론 정말 손글씨 숫자를 인식하는 프로그램만 개발하는 것이 이 챕터의 목적이었다면 이 챕터는 당연히 더 짧았을 것이다! 하지만 여기서는 뉴럴 네트워크 개발에 필요한 중요한 컨셉들과 함께 두 개의 중요한 인공 뉴런<sup>Artificial neuron</sup>(퍼셉트론<sup>Perceptron</sup>과 시그모이드 뉴런<sup>Sigmoid neuron</sup>) 그리고 통계적 그라디언트 디센트<sup>Stochastic Gradient Descent</sup>라 불리는 학습 알고리즘<sup>Learning Algorithm</sup>을 다룰 것이다.  
 전반적으로, 나는 독자가 뉴럴 네트워크의 동작 원리에 대한 직관을 형성할 수 있도록 자세히 설명할 것이다. 단순히 메카니즘을 설명하는 방식보다는 설명이 길어지겠지만 학습자가 공부하는 데에는 더 나은 방법일 것이다.
-그렇게 이 챕터를 다 읽고나면 딥러닝이 무엇 인지, 왜 그것에 주목하는지에 대해 이해하게 될 것이다.   
+그렇게 이 챕터를 다 읽고나면 딥러닝이 무엇인지, 왜 그것에 주목하는지에 대해 이해하게 될 것이다.   
 <br> 
 
 ### Perceptrons
 
-뉴럴 네트워크란 무엇일까? 시작하기에 앞서, 인공 뉴런 중 하나인 퍼셉트론 부터 짚고 넘어가자.
+뉴럴 네트워크란 무엇일까? 시작하기에 앞서 인공 뉴런 중 하나인 퍼셉트론 부터 짚고 넘어가자.
 
 *작성중*
 
