@@ -9,7 +9,7 @@ keywords: "Computer Science, Machine Learning, Computer Vision, Pattern Recognit
 #url: ""
 #baseurl: "/freshman21" # the subpath of your site, e.g. /blog/
 #url: "http://yulijia.net/freshman21" # the base hostname & protocol for your site
-locale: en_US
+locale: ko_KR
 
 ### Personal info and site tools info:
 twitter_username: #yulijia
