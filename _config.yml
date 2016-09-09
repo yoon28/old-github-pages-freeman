@@ -5,8 +5,8 @@ author: Kwangjin Yoon, 윤광진
 email: yoon28@gmail.com
 description: "This is a github page." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "Computer Science, Machine Learning, Computer Vision, Pattern Recognition"
-#baseurl: ""
-#url: ""
+baseurl: ""
+url: ""
 #baseurl: "/freshman21" # the subpath of your site, e.g. /blog/
 #url: "http://yulijia.net/freshman21" # the base hostname & protocol for your site
 locale: ko_KR
