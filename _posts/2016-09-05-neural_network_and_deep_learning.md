@@ -58,7 +58,17 @@ tags:
 
 ### Perceptrons
 
-뉴럴 네트워크란 무엇일까? 시작하기에 앞서 인공 뉴런 중 하나인 퍼셉트론부터 짚고 넘어가 보자.
+뉴럴 네트워크란 무엇일까? 시작하기에 앞서 인공 뉴런 중 하나인 퍼셉트론 부터 짚고 넘어가자.
+퍼셉트론은 1950, 60년대에 걸쳐 [Frank Rosenblatt](http://en.wikipedia.org/wiki/Frank_Rosenblatt)에 의해 [개발](http://books.google.ca/books/about/Principles_of_neurodynamics.html?id=7FhRAAAAMAAJ)되었으며 [Warren McCulloch](http://en.wikipedia.org/wiki/Warren_McCulloch)와 [Walter Pitts](http://en.wikipedia.org/wiki/Walter_Pitts)의 선행 [연구](http://scholar.google.ca/scholar?cluster=4035975255085082870)로부터 영향을 받았다.
+오늘날에는 *시그모이드 뉴런<sup>sigmoid neuron</sup>*이라 불리는 인공뉴런이 더욱 자주 사용되어지고 있으며 이 책에서도 주로 언급된다. 곧 시그모이드 뉴런에 대해 살펴볼 예정이지만 우선 퍼셉트론의 원리부터 이해함으로써 시그모이드 뉴런을 쉽게 이해할 수 있도록 할 것이다.
+
+그러면 퍼셉트론은 어떻게 동작할까? 퍼셉트론은 여러개의 바이너리<sup>binary</sup> 변수, $$ x_{1}, x_{2}, ... , $$ 를 입력으로 받아 하나의 바이너리 출력을 발생 시킨다:
+
+ 
+![imgs 3](http://neuralnetworksanddeeplearning.com/images/tikz0.png){:width="50%"}
+{: .center}
+
+위 그림의 퍼셉트론은 세개의 입력 $$ x_{1}, x_{2}, x_{3} $$ 을 이용한다.
 
 *작성중*
 
