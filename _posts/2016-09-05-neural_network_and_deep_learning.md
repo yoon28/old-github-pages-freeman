@@ -68,7 +68,7 @@ tags:
 ![imgs 3](http://neuralnetworksanddeeplearning.com/images/tikz0.png){:width="50%"}
 {: .center}
 
-위 그림의 퍼셉트론은 세개의 입력 $$ x_{1}, x_{2}, x_{3} $$ 을 이용한다.
+위 그림의 퍼셉트론은 세 개의 입력 $$ x_{1}, x_{2}, x_{3} $$ 을 이용한다.
 
 *작성 중*
 
