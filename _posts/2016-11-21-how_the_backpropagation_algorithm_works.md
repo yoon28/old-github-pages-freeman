@@ -3,13 +3,12 @@ published: true
 title: Neural Networks and Deep Learning
 layout: post
 author: Kwangjin Yoon 
-category: Deep learning, Neural Network
+category: Deep learning, Neural Network, Backpropagation
 tags: 
 - Deep learning 
 - Neural Network
 - backpropagation
 - 역전파
-- chapter 2
 - 번역
 ---
 

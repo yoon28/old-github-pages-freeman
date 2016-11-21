@@ -7,7 +7,6 @@ category: Deep learning, Neural Network
 tags: 
 - Deep learning 
 - Neural Network
-- chapter 1
 - 번역
 ---
 
