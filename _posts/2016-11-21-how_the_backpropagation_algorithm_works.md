@@ -26,4 +26,4 @@ tags:
 
 Backpropagation은 1970년대에 처음 소개되었지만, 1986년 [David Rumelhart](http://en.wikipedia.org/wiki/David_Rumelhart), [Geoffery Hintton](http://www.cs.toronto.edu/~hinton/), [Ronald Williams](http://en.wikipedia.org/wiki/Ronald_J._Williams)의 유명한 [논문](http://www.nature.com/nature/journal/v323/n6088/pdf/323533a0.pdf)에의해서 그 중요성이 알려지게 되었다.  
 
-* 작성 중 * 
+*작성 중* 
