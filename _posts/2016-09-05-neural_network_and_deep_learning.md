@@ -3,7 +3,9 @@ published: true
 title: Neural Networks and Deep Learning
 layout: post
 author: Kwangjin Yoon 
-category: Deep learning, Neural Network
+category: 
+- Deep learning
+- Neural Network
 tags: 
 - Deep learning 
 - Neural Network
