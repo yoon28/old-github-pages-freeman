@@ -1,6 +1,6 @@
 ---
 published: true
-title: Neural Networks and Deep Learning
+title: Neural net을 이용한 손글씨 숫자<sup>Handwritten digits</sup> 인식
 layout: post
 author: Kwangjin Yoon 
 category: 
