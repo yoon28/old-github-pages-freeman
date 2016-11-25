@@ -1,6 +1,6 @@
 ---
 published: true
-title: 역전파<sup>backpropagation</sup> 알고리즘의 원리
+title: Neural Networks and Deep Learning-Chapter2
 layout: post
 author: Kwangjin Yoon 
 category: 
