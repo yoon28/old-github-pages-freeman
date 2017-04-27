@@ -312,12 +312,12 @@ time{
  */
 
 q:before {
-  content: '『';
+  content: '"';
   color: #DD1144;
   font-weight:bold;
 }
 q:after {
-  content:'』';
+  content:'"';
   color: #DD1144;
   font-weight:bold;
 }
